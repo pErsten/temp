@@ -1,11 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="import" href="main.html">
-    <title>Остальное</title>
+    <title>Сценарій</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-
+    <header>
+        <h2>Цвет багровый окрасил взор мой</h2>
+        <ul class="headerbuttons">
+            <li><a id="menubutton">≡</a></li>
+            <li><a href="main.html">Головна</a></li>
+            <li><a href="secondary.html">Сценарій</a></li>
+            <li><a href="">Контакти</a></li>
+        </ul>
+    </header>
+    <main>
+        <article>
+            <h1>Текст сценарію</h1>
+            <p>Добрий вечір, у цьому відео я розкажу про логічні елементи на прикладі гри майнкрафт за допомогою редстоуна, та й про сам редстоун накидаю пару слів. Редстоун нам надає можливість створювати різноманітні схеми виходячи лише з трьох компонентів: сам редстоун, редстоун смолоскип(факел) та повторювач(репітер). Редстоун є аналогом дроту з реального життя – коли через нього проходить струм він видає сигнал. Факел (інвертор) є більш просунутим елементом – він інвертує вхідний сигнал на протилежний, наслідком чого є те що він є також джерелом струму якщо на нього не йде сигнал. Редстоун поширює сигнал лише на 15 блоків і тому для його подовження можна використати 2 інвертори, або ж є репітер.
+Загалом для створення схем в майнкрафт достатньо редстоуну та інвертора. Ось наприклад найпростіший елемент, що складається з лише одного вхідного сигналу (NOT), а це просто продовження сигналу (опис «продовження сигналу»), а це елемент «ні» (опис «NOT»). Наступні логічні елементи складаються з 2х входів та 1го виходу. Це є елемент «і» AND, елемент «або» OR та «виключне або» XOR. Кожен з цих елементів дублюється його інверсією: NAND, NOR та XNOR відповідно.
+Першим з них є елемент OR (опис «OR»). Ну і елемент NOR відповідно (опис «NOR»).
+Далі опис інших логічних елементів.</p>
+        </article>
+        <nav>
+            <h4 class="navHeader">Картинка</h4>
+            <img src="prebenis.png">
+        </nav>
+        <aside>
+            <p>Just a place, where author sometimes put ads and ways for visitors to support him in the means of money</p>
+        </aside>
+    </main>
+    <footer>
+        <p>none rights reserved</p>
+    </footer>
+    <script>
+        let block = document.body.querySelector('nav');
+        function expand(){
+            if(!block.classList.contains('openmenu')){
+                //block.setAttribute('class','openmenu');
+                block.classList.add('openmenu');
+            }
+            else{
+                block.removeAttribute('class');
+                block.removeAttribute('style');
+            }
+            let navigation = document.querySelector('.openmenu');
+            let article = document.querySelector('article');
+            if (navigation && article.clientHeight > navigation.clientHeight){
+                navigation.style.height = `${article.clientHeight}px`;
+            }
+        }
+        menubutton.addEventListener('click',expand);
+        window.addEventListener('resize', function(event){
+            if(window.innerWidth >= 600 && block.classList.contains('openmenu')){
+                block.removeAttribute('class');
+                block.removeAttribute('style');
+            }
+        });
+        //if(document.documentElement.clientWidth < 600) expand();
+    </script>
 </body>
 </html>
