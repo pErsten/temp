@@ -1,0 +1,67 @@
+    <title>Название из четырех слов</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h2>Цвет багровый окрасил взор мой</h2>
+        <ul class="headerbuttons">
+            <li><a id="menubutton">≡</a></li>
+            <li><a href="main.html">Главная</a></li>
+            <li><a href="secondary.html">Остальное</a></li>
+            <li><a href="">Контакты</a></li>
+        </ul>
+    </header>
+    <main>
+        <article>
+            <h1>Что такое осень?</h1>
+            <p>L'automne c'est quoi?</p>
+        </article>
+        <nav>
+            <h4 class="navHeader">Аниме про Древний Рим</h4>
+            <ul class="navButtons">
+                <li><a href="https://www.youtube.com/watch?v=0IU4qrriHrs">Пять крутых императоров</a></li>
+                <li><a href="https://www.youtube.com/watch?v=Wy_kKBBe2Co">Династия Северов</a></li>
+                <li><a href="https://www.youtube.com/watch?v=nUyPjwqNRQA">Кромешный п...ц 3-го века</a></li>
+                <li><a href="https://www.youtube.com/watch?v=3MxRciSmvuo">Диоклетиан и его друзья</a></li>
+                <li><a href="https://www.youtube.com/watch?v=RubexYgwDnQ">IN HOC SIGNO VINCES</a></li>
+                <li><a href="https://www.youtube.com/watch?v=zbt70Kk8V4Y">Почти конец</a></li>
+                <li><a href="https://www.youtube.com/watch?v=C7QQNF4MfhY">Разграбление Вечного города</a></li>
+                <li><a href="https://www.youtube.com/watch?v=pnsDqOpQ2_U">Падение Рима...</a></li>
+            </ul>
+            <img src="prebenis.png">
+        </nav>
+        <aside>
+            <p>Just a place, where author sometimes put ads and ways for visitors to support him in the means of money</p>
+        </aside>
+    </main>
+    <footer>
+        <p>none rights reserved</p>
+    </footer>
+    <script>
+        let block = document.body.querySelector('nav');
+        function expand(){
+            if(!block.classList.contains('openmenu')){
+                //block.setAttribute('class','openmenu');
+                block.classList.add('openmenu');
+            }
+            else{
+                block.removeAttribute('class');
+                block.removeAttribute('style');
+            }
+            let navigation = document.querySelector('.openmenu');
+            let article = document.querySelector('article');
+            if (navigation && article.clientHeight > navigation.clientHeight){
+                navigation.style.height = `${article.clientHeight}px`;
+            }
+        }
+        menubutton.addEventListener('click',expand);
+        window.addEventListener('resize', function(event){
+            if(window.innerWidth >= 600 && block.classList.contains('openmenu')){
+                block.removeAttribute('class');
+                block.removeAttribute('style');
+            }
+        });
+        //if(document.documentElement.clientWidth < 600) expand();
+    </script>
+</body>
+</html>
